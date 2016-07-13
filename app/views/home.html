@@ -1,0 +1,62 @@
+<kendo-mobile-view id="home" 
+                   k-layout="'default'" 
+                   ng-controller="homeController" 
+                   >
+    <style>
+        #map {
+            width: 100%;
+            height: 200px;
+        }
+    </style>    
+    
+    <script>
+        function superHandler(argument) {
+            angular.element("#home").scope().superHandlerSc(argument);
+        }
+    </script>
+    
+    <kendo-mobile-header>
+        <kendo-mobile-nav-bar>
+            <kendo-mobile-view-title>Checkin</kendo-mobile-view-title>
+            <kendo-mobile-button k-icon="'pin'" k-align="'right'" ></kendo-mobile-button>
+        </kendo-mobile-nav-bar>        
+    </kendo-mobile-header>    
+    
+    <kendo-mobile-list-view k-pull-to-refresh="true" k-pull-parameters="pullparam" >
+    </kendo-mobile-list-view>
+    <br>
+    <center>
+        <img src="/images/logo_totvs.png" width="80%" />
+        <br>
+        <br>
+        <label>Pull To Refresh Counter: {{valor}}</label>
+        <br>
+        <br>
+        <kendo-mobile-button ng-click="showLoading()">
+            Show Loading Popup
+        </kendo-mobile-button>
+        <br>
+        <br>
+        <kendo-mobile-button k-on-click="actions.open()">
+            Action Sheet
+        </kendo-mobile-button>     
+        <ul kendo-mobile-action-sheet="actions" k-popup='{"direction": "left"}'>
+            <li><a href="#" data-command="view">View</a></li>
+            <li><a href="#" data-command="rename">Rename</a></li>
+            <li><a href="#" data-command="delete">Delete</a></li>
+            <li><a href="#" data-command="perms">Set permissions ...</a></li>
+        </ul>
+        <br>
+        <br>
+        <br>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <totvs-button icon="glyphicon-star"></totvs-button>
+                </div>
+            </div>
+        </div>
+        
+    </center>    
+</kendo-mobile-view>

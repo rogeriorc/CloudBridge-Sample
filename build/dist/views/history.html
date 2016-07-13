@@ -1,0 +1,35 @@
+<kendo-mobile-view id="history" 
+                   k-layout="'default'" 
+                   k-title="'History'"
+                   ng-controller="historyController">
+    <kendo-mobile-content>
+    <script>
+        function takePictureHandler(img) {
+            angular.element("#history").scope().takePictureSuccess(img);
+        }
+    </script>
+        <center>
+            <ul id="dairy">
+                <li>
+                    <img ng-src="{{imgPath}}" style="max-width:90%" />
+                </li>
+            </ul>
+            Path: {{imgPath}}
+            <kendo-mobile-button ng-click="takePicture()">
+                Tirar Foto
+            </kendo-mobile-button>
+            <ul id="dairy">
+                <li>
+                    <span kendo-barcode
+                      k-type="'code128'"
+                      ng-model="barcode"
+                      style="width: 250px; margin: 0 auto;">
+                    </span>
+                </li>
+            </ul>
+            <kendo-mobile-button ng-click="lerCB()">
+                Ler código de barras
+            </kendo-mobile-button>
+        </center>
+    </kendo-mobile-content>
+</kendo-mobile-view>

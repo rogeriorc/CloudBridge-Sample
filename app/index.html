@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	
+	<!-- build:css(.) styles/vendor.css -->
+		<!-- bower:css -->
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+		<!-- endbower -->
+	
+        <link rel="stylesheet" href="bower_components/kendo-ui/styles/kendo.common.min.css" />
+        <link rel="stylesheet" href="bower_components/kendo-ui/styles/kendo.default.min.css" />
+        <link rel="stylesheet" href="bower_components/kendo-ui/styles/kendo.mobile.office365.min.css">  
+	<!-- endbuild -->
+	
+	<!-- build:css(.tmp) styles/main.css -->
+		<link rel="stylesheet" href="styles/main.css">
+	<!-- endbuild -->
+
+	<script>
+		function handlerRunADVPL(argument){
+			angular.element("#cloudBridgeApp").scope().runAdvplSuccess(argument);
+		}
+	</script>
+</head>
+<body kendo-mobile-application id="cloudBridgeApp" ng-app="cloudBridgeApp" ng-controller="appController" k-initial="initialView" k-options="appOptions">
+	<kendo-mobile-layout k-id="'default'">
+		<kendo-mobile-header>
+			<kendo-mobile-nav-bar>
+				<kendo-view-title></kendo-view-title>
+			</kendo-mobile-nav-bar>
+		</kendo-mobile-header>						
+		<kendo-mobile-footer>
+			<kendo-mobile-tab-strip>
+				<a href="views/home.html" data-icon="home">Home</a>
+				<a href="views/history.html" data-icon="recents">History</a>
+				<a href="views/settings.html" data-icon="settings">Settings</a>
+			</kendo-mobile-tab-strip>
+		</kendo-mobile-footer>						
+		<kendo-mobile-view></kendo-mobile-view>
+	</kendo-mobile-layout>
+
+	<!-- build:js(.) scripts/vendor.js -->
+		<!-- bower:js -->
+		<script src="bower_components/jquery/dist/jquery.js"></script>
+		<script src="bower_components/angular/angular.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+		<script src="bower_components/kendo-ui/js/kendo.ui.core.min.js"></script>
+		<!-- endbower -->
+		
+	<!-- endbuild -->
+
+	<!-- build:js({.tmp,app}) scripts/scripts.js -->
+		<script src="scripts/app.js"></script>
+		<script src="scripts/controllers/home-controller.js"></script>
+		<script src="scripts/controllers/history-controller.js"></script>
+		<script src="scripts/controllers/settings-controller.js"></script>
+		<script src="scripts/totvstec-angular-1.0.0.js"></script>
+		<script src="scripts/totvs-html-framework.js"></script>
+	<!-- endbuild -->
+</body>
+</html>
