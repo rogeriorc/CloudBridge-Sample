@@ -17,10 +17,10 @@
     function totvsTecMobile() {
         
         // Versao
-        const version = "1.0.0";
+        var version = "1.0.0";
         
         // Defines do OpenSettings e TestDevice
-        const config = {
+        var config = {
             BLUETOOTH_FEATURE : 1,
             NFC_FEATURE : 2,
             WIFI_FEATURE : 3,
